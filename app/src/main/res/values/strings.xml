@@ -1,0 +1,30 @@
+<resources>
+    <!--- Strings for TicTacToe game screen -->
+    <string name="app_name">TicTacToe</string>
+    <string name="TLbutton"> </string>
+    <string name="TCbutton"> </string>
+    <string name="TRbutton"> </string>
+    <string name="CLbutton"> </string>
+    <string name="Cbutton"> </string>
+    <string name="CRbutton"> </string>
+    <string name="BLbutton"> </string>
+    <string name="BCbutton"> </string>
+    <string name="BRbutton"> </string>
+    <string name="Rbutton">RESTART</string>
+    <string name="title_activity_login">Players</string>
+    <string name="scorebutton">Score</string>
+    <string name="title_activity_start_new_game">Welcome TicTacToe</string>
+
+    <!-- Strings for new plays screen-->
+    <string name="title_activity_game">TicTacToe</string>
+    <string name="player1name">Player 1 Name</string>
+    <string name="startgamebutton">Start New Game</string>
+    <string name="player2name">Player 2 Name</string>
+    <string name="startimage">getready</string>
+
+    <!--- Strings for Score screen -->
+    <string name="ClearScorebutton">Clear Scores</string>
+    <string name="title_activity_score">Score History</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+</resources>
