@@ -18,6 +18,11 @@ import android.content.ServiceConnection;
 
 import com.example.rodger.tictactoe.R;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import static com.example.rodger.tictactoe.R.*;
 
 
@@ -337,6 +342,7 @@ public class Game extends StartNewGame {
                 }
         );
 
+        /*
         //Scores Button code
         final Button seescoresButton = (Button) findViewById(id.scorebutton);
 
@@ -353,6 +359,42 @@ public class Game extends StartNewGame {
                         j.putExtra("secondplayername",playername2);
                         j.putExtra("player1score",p1score);
                         j.putExtra("player2score",p2score);
+                        startActivity(j);
+                    }
+                }
+
+        );
+        */
+
+        //we will store the scores into a Internal Device File
+        final Button seescoresButton = (Button) findViewById(id.scorebutton);
+
+        //get player names scores and pass them to the Score view
+        final String playername1 = getIntent().getExtras().getString("firstplayername");
+        final String playername2 = getIntent().getExtras().getString("secondplayername");
+        //get player scores SO FAR and pass them to the Score view
+
+        seescoresButton.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        //write data to the internal phone app File
+                        try{
+                            FileOutputStream fileOS = openFileOutput(fileName, MODE_APPEND);
+                            OutputStreamWriter osw = new OutputStreamWriter(fileOS);
+                            try{
+                                osw.write(playername1 + " wins: " + p1score + " vs " + playername2 + " wins: " + p2score);
+                                osw.write("\n");
+                                osw.flush();
+                                osw.close();
+                                Toast.makeText(getBaseContext(),"Scores Saved", Toast.LENGTH_LONG).show();
+                            }catch(IOException e){
+                                e.printStackTrace();
+                            }
+                        }catch (FileNotFoundException e){
+                            e.printStackTrace();
+                        }
+                        Intent j = new Intent(Game.this, Score.class);
+
                         startActivity(j);
                     }
                 }

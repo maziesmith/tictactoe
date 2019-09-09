@@ -12,7 +12,7 @@
     <string name="BRbutton"> </string>
     <string name="Rbutton">RESTART</string>
     <string name="title_activity_login">Players</string>
-    <string name="scorebutton">Scores</string>
+    <string name="scorebutton">Score</string>
     <string name="title_activity_start_new_game">Welcome TicTacToe</string>
 
     <!-- Strings for new plays screen-->

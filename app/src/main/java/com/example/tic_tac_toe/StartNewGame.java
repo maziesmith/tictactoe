@@ -28,6 +28,9 @@ import static com.example.rodger.tictactoe.R.id.p2name;
 
 
 public class StartNewGame extends AppCompatActivity {
+    //filename of the internal File we want to store
+    public String fileName = "scores";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
