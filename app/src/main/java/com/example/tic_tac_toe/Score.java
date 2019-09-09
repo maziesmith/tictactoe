@@ -18,6 +18,7 @@ import java.util.List;
 
 public class Score extends StartNewGame {
     private ListView score_lv;
+    private static List<String> nameArr = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +28,14 @@ public class Score extends StartNewGame {
 
         score_lv = (ListView) findViewById(R.id.scoreList);
         //Set up list
-        List<String> nameArr = new ArrayList<String>();
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nameArr);
 
-
-        //Append match score and names to the score list
         try {
-            if(getIntent().getExtras().getString("firstplayername").length()>0 && getIntent().getExtras().getString("secondplayername").length()>0 && getIntent().getExtras().getInt("player1score") >= 0 && getIntent().getExtras().getInt("player2score")>=0) {
+        //Append match score and names to the score list
+        nameArr.add(0, getIntent().getExtras().getString("firstplayername") + " wins: " + getIntent().getExtras().getInt("player1score") + " vs " + getIntent().getExtras().getString("secondplayername") + " wins: " + getIntent().getExtras().getInt("player2score"));
+            score_lv.setAdapter(arrayAdapter);
 
-                nameArr.add(getIntent().getExtras().getString("firstplayername") + " wins: " + getIntent().getExtras().getInt("player1score") + " vs " + getIntent().getExtras().getString("secondplayername") + " wins: " + getIntent().getExtras().getInt("player2score"));
-                score_lv.setAdapter(arrayAdapter);
-            }else{
-nameArr.add("No scores to display");
-                score_lv.setAdapter(arrayAdapter);
-            }
 
         }catch (Exception e){
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
@@ -66,6 +61,8 @@ nameArr.add("No scores to display");
         clearButton.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
+                        score_lv = (ListView) findViewById(R.id.scoreList);
+                        nameArr.clear();
                         score_lv.setAdapter(null);
                     }
                 });
