@@ -9,25 +9,33 @@
     tools:context="com.example.tic_tac_toe.StartNewGame">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="718dp"
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="84dp"
         android:foregroundGravity="fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/startgamebutton"
-            android:layout_width="match_parent"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/p1name"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="121dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100dp"
             android:gravity="center"
             android:text="@string/startgamebutton"
             android:textAlignment="center"
@@ -57,10 +65,18 @@
 
         <EditText
             android:id="@+id/p2name"
-            android:layout_width="wrap_content"
+            android:layout_width="225dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/p1name"
-            android:layout_marginTop="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="93dp"
+            android:layout_marginLeft="93dp"
+            android:layout_marginTop="82dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginRight="92dp"
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
@@ -69,21 +85,20 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="113dp"
-            tools:text="Player 2 Name"
-            android:layout_centerHorizontal="true"/>
+            tools:text="Player 2 Name" />
 
         <ImageView
             android:id="@+id/gifimage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="293dp"
             android:layout_below="@+id/startgamebutton"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="72dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="-7dp"
             android:contentDescription="@string/startimage"
             app:srcCompat="@drawable/getready2" />
 
